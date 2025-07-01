@@ -1,7 +1,6 @@
 import pandas as pd
 
 def excluir_livro(df, caminho_arquivo, campo, valor):
-    # 🛠️ Validação do campo
     campos_validos = ['título', 'autor', 'categoria']
     if campo not in campos_validos:
         print(f"Campo inválido. Escolha entre: {', '.join(campos_validos)}.")
@@ -14,10 +13,10 @@ def excluir_livro(df, caminho_arquivo, campo, valor):
     resultados = df[df[campo].str.contains(valor, case=False, na=False)]
 
     if resultados.empty:
-        print(f"🔍 Nenhum livro encontrado para {campo} = '{valor}'")
+        print(f"Nenhum livro encontrado para {campo} = '{valor}'")
         return df
 
-    print(f"\n📚 Livros encontrados para exclusão por {campo} = '{valor}':")
+    print(f"\nLivros encontrados para exclusão por {campo} = '{valor}':")
     print(resultados)
 
     confirmacao = input("\nDeseja excluir esses livros? (s/n): ").strip().lower()
@@ -28,5 +27,5 @@ def excluir_livro(df, caminho_arquivo, campo, valor):
     df = df.drop(resultados.index).reset_index(drop=True)
     df.to_excel(caminho_arquivo, index=False)
 
-    print(f"✅ {len(resultados)} livro(s) excluído(s) com sucesso.")
+    print(f"{len(resultados)} Livro(s) excluído(s) com sucesso.")
     return df
