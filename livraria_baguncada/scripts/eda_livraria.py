@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 df = pd.read_excel("C:Users\lcecc\OneDrive\Desktop\Python\livraria_baguncada\data\livraria_limpa.xlsx")
 
-# Limpa espaços extras dos nomes das colunas
+#Limpa espaços extras dos nomes das colunas
 df.columns = df.columns.str.strip()
 
 #Boas praticas para verificação de nomenclaturas
@@ -31,7 +31,7 @@ print(df.groupby('categoria')["preço"].mean())
 print("\nEstoque total por categoria:")
 print(df.groupby('categoria')["estoque"].sum())
 
-# Média de preço por categoria
+#Média de preço por categoria
 media_preco_categoria = df.groupby('categoria')['preço'].mean()
 
 #Grafico em barras
