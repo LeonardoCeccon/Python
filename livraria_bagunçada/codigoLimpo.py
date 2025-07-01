@@ -18,7 +18,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-#Pie Grap - Total stock by tag
+#Pie Graph- Total stock by tag
 estoque_categoria = df.groupby('categoria')['estoque'].sum()
 
 plt.figure(figsize = (7,7))
