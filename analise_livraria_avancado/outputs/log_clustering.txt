@@ -1,2 +1,0 @@
-base_dir: C:\Users\lcecc\OneDrive\Desktop\Python\analise_livraria_avancado\scripts
-caminho_arquivo: C:\Users\lcecc\OneDrive\Desktop\Python\analise_livraria_avancado\scripts\..\data\livraria_estoque.xlsx
