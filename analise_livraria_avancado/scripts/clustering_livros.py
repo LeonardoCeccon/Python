@@ -19,7 +19,7 @@ def executar():
     caminho_saida = os.path.join(base_dir, '..', 'outputs')
     os.makedirs(caminho_saida, exist_ok=True)
 
-    # (opcional) Grava log para debug
+    # Grava log para debug
     try:
         with open(os.path.join(caminho_saida, 'log_clustering.txt'), 'w') as f:
             f.write(f"base_dir: {base_dir}\n")
