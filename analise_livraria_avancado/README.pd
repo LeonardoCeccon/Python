@@ -1,7 +1,15 @@
 PT
 
-Avançando um pouco mais na analise de dados com Scikit-learn para previsões usando regressão nominal e polinomial. Este documento será atualizando de acordo com o andamento dos estudos.
+Este documento será atualizando de acordo com o andamento dos estudos.
+Update de 7/7 - Criados os scripts para:
+- Clustering para agrupamento de livros por preço durante os anos e uso de centroides
+- Menu para criação de uma pequena interface para uso do arquivo executavel
+  Obs: Estou usando o promt para execução do arquivo porém ele não acha o arquivo excel na pasta "data"
 
 EN
 
-Taking a step further in data analysis with Scikit-learn for predictions using nominal and polynomial regression. This document will be updated as studies progress.
+This document will be updated as studies progress.
+Update on 7/7 - Some scripts were created for:
+- Clustering to group books by price during the years and use of some centroides
+- Menu  to create an simple interface to use on .exe file
+  PS: I'm using prompt to open the .exe file but it doens't find the exel file on "data"
