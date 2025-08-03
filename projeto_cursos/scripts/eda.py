@@ -34,11 +34,11 @@ if not all(col in df.columns for col in required_cols):
     print(f"Erro: Colunas obrigatórias não encontradas. Verifique: {required_cols}")
     exit()
 
-# 1. Análise Inicial
+# Análise Inicial
 print("\n=== Resumo Estatístico ===")
 print(df[['DURAÇÃO', 'IMPORTE CLIENTE', 'IMPORTE PROFESSOR']].describe())
 
-# 2. Gráficos Aprimorados
+# Gráficos Aprimorados
 # Top 10 Cursos (Horizontal)
 plt.figure()
 top_cursos = df['CURSO'].value_counts().nlargest(10)
