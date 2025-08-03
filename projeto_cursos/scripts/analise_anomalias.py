@@ -12,7 +12,7 @@ plt.rcParams['figure.figsize'] = (12, 6)
 current_dir = Path(__file__).parent
 df = pd.read_excel(current_dir / "../data/dadoscursos.xlsx", sheet_name="CURSOS", engine='openpyxl')
 
-# 1. Análise Temporal Detalhada
+# Análise Temporal Detalhada
 df['DATA'] = pd.to_datetime(df['DATA CURSO'])
 df['MES_ANO'] = df['DATA'].dt.to_period('M')
 
@@ -20,7 +20,7 @@ df['MES_ANO'] = df['DATA'].dt.to_period('M')
 faturamento_mensal = df.groupby('MES_ANO')['IMPORTE CLIENTE'].sum().reset_index()
 faturamento_mensal['MES_ANO'] = faturamento_mensal['MES_ANO'].dt.to_timestamp()
 
-# 2. Identificação de Anomalias (Método estatistico)
+# Identificação de Anomalias (Método estatistico)
 media = faturamento_mensal['IMPORTE CLIENTE'].mean()
 std = faturamento_mensal['IMPORTE CLIENTE'].std()
 limite_superior = media + 3 * std
@@ -29,7 +29,7 @@ anomalias = faturamento_mensal[faturamento_mensal['IMPORTE CLIENTE'] > limite_su
 print("\n=== Anomalias Detectadas ===")
 print(anomalias.to_string())
 
-# 3. Gráfico Detalhado
+# Gráfico Detalhado
 plt.figure()
 ax = sns.lineplot(
     data=faturamento_mensal,
@@ -63,7 +63,7 @@ output_dir.mkdir(exist_ok=True)
 plt.savefig(output_dir / "anomalias_faturamento.png", dpi=300)
 plt.close()
 
-# 4. Investigar os registros específicos
+# Investigar os registros específicos
 if not anomalias.empty:
     meses_anomalos = anomalias['MES_ANO'].dt.to_period('M')
     registros_anomalos = df[df['MES_ANO'].isin(meses_anomalos)].sort_values('IMPORTE CLIENTE', ascending=False)
